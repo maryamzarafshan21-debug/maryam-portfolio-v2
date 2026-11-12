@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Maryam Zarafshan · Senior GoHighLevel Expert</title>
+  <meta name="description" content="Maryam Zarafshan, senior GoHighLevel expert. Funnels, workflow automations, AI agents and CRM systems built for real estate, insurance, home services, education and more." />
+  <meta name="author" content="Maryam Zarafshan" />
+  <meta name="theme-color" content="#f4ede3" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Maryam Zarafshan",
+      "jobTitle": "Senior GoHighLevel Expert",
+      "description": "GoHighLevel specialist building funnels, workflow automations, AI agents and CRM systems.",
+      "url": "https://maryamzarafshan.com/",
+      "image": "https://maryamzarafshan.com/assets/portrait.jpg",
+      "email": "afsheen.ghl@gmail.com",
+      "telephone": "+92 311 6515703",
+      "knowsAbout": [
+        "GoHighLevel",
+        "Marketing Automation",
+        "CRM Systems",
+        "AI Agents",
+        "Funnels",
+        "Zapier",
+        "Make",
+        "HubSpot"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/maryam-zarafshan-a51318385"
+      ]
+    }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236b1f2f'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='26' font-weight='700' text-anchor='middle' fill='%23f4ede3'%3EMZ%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true">
+    <span class="cursor-label" id="cursor-label"></span>
+  </div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Lights-off veil (toggled by the hanging bulb) -->
+  <div class="lights-veil" id="lights-veil" aria-hidden="true"></div>
+
+  <!-- UI sound toggle (off by default) -->
+  <button type="button" class="sound-toggle" id="sound-toggle" aria-label="Enable sound" aria-pressed="false">
+    <span class="sound-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="sound-label">Sound off</span>
+  </button>
+
+  <!-- Easter egg toast -->
+  <div class="easter-toast" id="easter-toast" role="status" aria-live="polite"></div>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre-top">
+      <span>maryamzarafshan.com</span>
+      <span>Portfolio ©<span class="pre-year"></span></span>
+    </div>
+    <div class="pre-mid">
+      <span class="pre-dot"></span>
+      <div class="pre-word"><span id="pre-word">Funnels</span></div>
+    </div>
+    <div class="pre-bottom">
+      <div class="pre-left">
+        <button type="button" class="pre-skip" id="pre-skip">Skip</button>
+        <div class="pre-bar"><div class="pre-bar-fill" id="pre-bar-fill"></div></div>
+      </div>
+      <span class="pre-count" id="pre-count">0</span>
+    </div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress"><div class="scroll-progress-fill" id="progress-fill"></div></div>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#top" class="brand" aria-label="Maryam Zarafshan — back to top">
+        <span class="brand-avatar" aria-hidden="true">MZ</span>
+        <span class="brand-name">Maryam Zarafshan<sup>®</sup></span>
+        <span class="brand-role">Senior GHL Expert</span>
+      </a>
+      <div class="header-right">
+        <span class="avail"><span class="avail-dot"></span> Available · Pakistan</span>
+        <a href="#contact" class="btn btn-dark btn-sm">Hire me</a>
+        <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu-overlay">
+          <span class="menu-btn-label">Menu</span>
+          <span class="menu-btn-lines" aria-hidden="true"><i></i><i></i></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hanging bulb (click to toggle the lights) -->
+  <button type="button" class="hanging-bulb" id="hanging-bulb" aria-label="Toggle lights off" aria-pressed="false" data-cursor="Lights">
+    <span class="bulb-pivot">
+      <span class="bulb-cord"></span>
+      <span class="bulb">
+        <span class="bulb-glow"></span>
+        <span class="bulb-cap"></span>
+        <span class="bulb-glass"><i class="bulb-filament"></i></span>
+      </span>
+    </span>
+  </button>
+
+  <!-- Fullscreen menu -->
+  <nav class="menu-overlay" id="menu-overlay" aria-hidden="true" aria-label="Main menu">
+    <div class="menu-top">
+      <span>maryamzarafshan.com</span>
+      <button type="button" class="menu-close" id="menu-close">Close ✕</button>
+    </div>
+    <ul class="menu-links">
+      <li><a href="#about" data-num="01">About</a></li>
+      <li><a href="#services" data-num="02">Services</a></li>
+      <li><a href="#tools" data-num="03">Toolkit</a></li>
+      <li><a href="#resume" data-num="04">Resume</a></li>
+      <li><a href="#work" data-num="05">Portfolio</a></li>
+      <li><a href="#contact" data-num="08">Contact</a></li>
+    </ul>
+    <div class="menu-foot">
+      <a href="mailto:afsheen.ghl@gmail.com">afsheen.ghl@gmail.com</a>
+      <a href="tel:+923116515703">+92 311 6515703</a>
+      <a href="https://wa.me/923116515703" target="_blank" rel="noopener">WhatsApp ↗</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-orbs" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+      </div>
+      <div class="container hero-container">
+        <div class="hero-eyebrow hero-anim">
+          <span class="hero-tag">Maryam Zarafshan<sup>®</sup></span>
+          <span class="hero-sep" aria-hidden="true"></span>
+          <span class="hero-avail"><span class="avail-dot"></span> Available · Lahore, Pakistan</span>
+        </div>
+
+        <h1 class="hero-title hero-anim">
+          Maryam Zarafshan,<br />
+          <span class="hero-sub-wrap">
+            <span class="hero-title-sub">senior GoHighLevel expert</span>
+            <svg class="squiggle squiggle-sub" viewBox="0 0 300 22" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M3 14C34 4 62 18 92 12c30-6 50-9 78 0 28 9 46 6 70-2 15-5 34-6 54 1" />
+            </svg>
+          </span>
+        </h1>
+
+        <div class="hero-mega hero-anim" aria-hidden="true">
+          <div class="hero-mega-track">
+            <span>GOHIGHLEVELEXPERT</span><span>GOHIGHLEVELEXPERT</span>
+          </div>
+        </div>
+
+        <div class="hero-row hero-anim">
+          <ul class="hero-list">
+            <li><span>/</span> Funnels &amp; Websites</li>
+            <li><span>/</span> Workflow Automations</li>
+            <li><span>/</span> AI Agents &amp; CRM</li>
+          </ul>
+
+          <div class="hero-cta">
+            <div class="hero-stamp" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <defs>
+                  <path id="stampPath" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" />
+                </defs>
+                <text><textPath href="#stampPath">OPEN FOR PROJECTS · GHL EXPERT · OPEN FOR PROJECTS · </textPath></text>
+              </svg>
+              <span class="stamp-center">MZ</span>
+            </div>
+            <a href="#contact" class="btn btn-primary">Start a project <span aria-hidden="true">→</span></a>
+            <a href="https://wa.me/923116515703" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp</a>
+            <p class="hero-note">Funnels, automations and CRM systems that turn visitors into booked appointments.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sticker-layer" aria-hidden="true">
+        <span class="sticker sticker-a" data-speed="-0.12">Open for projects ✳</span>
+        <span class="sticker sticker-b" data-speed="0.18">GHL · AI · CRM</span>
+        <span class="sticker sticker-c" data-speed="0.1">automate it</span>
+      </div>
+
+      <div class="hero-strip" aria-hidden="true">
+        <div class="hero-strip-track">
+          <span>Build</span><i>◆</i><span>Design</span><i>◆</i><span>Automate</span><i>◆</i><span>Repeat</span><i>◆</i>
+          <span>Build</span><i>◆</i><span>Design</span><i>◆</i><span>Automate</span><i>◆</i><span>Repeat</span><i>◆</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools marquee -->
+    <div class="tool-marquee" aria-hidden="true">
+      <div class="tool-track">
+        <span>GoHighLevel</span><i>✦</i><span>Funnels</span><i>✦</i><span>Automations</span><i>✦</i>
+        <span>AI Agents</span><i>✦</i><span>CRM Systems</span><i>✦</i><span>Zapier</span><i>✦</i>
+        <span>Make</span><i>✦</i><span>HubSpot</span><i>✦</i>
+        <span>GoHighLevel</span><i>✦</i><span>Funnels</span><i>✦</i><span>Automations</span><i>✦</i>
+        <span>AI Agents</span><i>✦</i><span>CRM Systems</span><i>✦</i><span>Zapier</span><i>✦</i>
+        <span>Make</span><i>✦</i><span>HubSpot</span><i>✦</i>
+      </div>
+    </div>
+
+    <div class="funky-divider" aria-hidden="true">
+      <span class="fd-line"></span>
+      <span class="fd-star">✳</span>
+      <span class="fd-text">build · design · automate · repeat</span>
+      <span class="fd-star fd-star-2">✳</span>
+      <span class="fd-line"></span>
+    </div>
+
+    <!-- About -->
+    <section class="section light" id="about">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-num">01</span>
+          <span class="sec-label">About me</span>
+        </div>
+
+        <h2 class="statement reveal">
+          Most businesses don't have a <em>lead</em> problem. They have a <em class="ink-mark">follow-up</em> problem.
+          <span class="statement-hl">I build the systems that fix it.</span>
+        </h2>
+
+        <div class="about-cols">
+          <div class="about-bio reveal">
+            <p>
+              I'm <strong>Maryam Zarafshan</strong>, a GoHighLevel specialist with
+              <strong>3+ years of hands-on experience</strong> and a <strong>BSCS from UMT Lahore</strong>.
+              I don't just design pages — I engineer complete growth systems that hold up under
+              real-world traffic.
+            </p>
+            <p>
+              My focus is <em>workflow automation</em>, <em>AI agents</em>, <em>campaigns</em>,
+              <em>lead capture</em> and <em>funnel building</em>. I care about the details most people
+              skip — duplicate checks, failure paths, maintainable tagging and reporting you can actually
+              trust — because those are what make a system survive production.
+            </p>
+            <p>
+              Every build ships snapshot-ready, so agencies and businesses can clone it, scale it and
+              spend their time selling instead of fire-fighting inside the CRM. I've delivered
+              <strong>60+ high-converting funnels</strong> across <strong>15+ industries</strong>, from
+              real estate and insurance to home services, education and healthcare.
+            </p>
+          </div>
+
+          <div class="about-stats reveal">
+            <div class="a-stat">
+              <span class="a-num" data-count="3" data-suffix="+">0+</span>
+              <span class="a-label">Years in GoHighLevel</span>
+            </div>
+            <div class="a-stat">
+              <span class="a-num" data-count="60" data-suffix="+">0+</span>
+              <span class="a-label">Funnels built &amp; launched</span>
+            </div>
+            <div class="a-stat">
+              <span class="a-num" data-count="15" data-suffix="+">0+</span>
+              <span class="a-label">Industries served</span>
+            </div>
+            <div class="a-stat">
+              <span class="a-num" data-count="66" data-suffix="">0</span>
+              <span class="a-label">Workflows in one build</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section navy" id="services">
+      <div class="container">
+        <div class="sec-head light">
+          <span class="sec-num">02</span>
+          <span class="sec-label">Services</span>
+        </div>
+        <div class="services-head">
+          <h2 class="section-title reveal">What I <em>build</em></h2>
+          <p class="section-lede reveal">Four ways I turn GoHighLevel into revenue. Every one is a system I've shipped for paying clients — not a template.</p>
+        </div>
+
+        <div class="accordion" id="accordion">
+          <article class="acc-item open reveal">
+            <button class="acc-trigger" aria-expanded="true">
+              <span class="acc-idx">01</span>
+              <span class="acc-name">Funnels &amp; Websites</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-panel">
+              <div class="acc-inner">
+                <p>Conversion-first GoHighLevel funnels and sites: a sharp offer, fast pages, and booking and payments wired in from day one.</p>
+                <ul class="acc-tags">
+                  <li>Landing pages</li><li>Booking</li><li>Payments</li><li>Websites</li>
+                </ul>
+                <div class="acc-metric"><span>60+</span> funnels built</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="acc-item reveal">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-idx">02</span>
+              <span class="acc-name">Automation Workflows</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-panel">
+              <div class="acc-inner">
+                <p>Complex multi-step automations across GHL, Make and Zapier — with AI agents that qualify, follow up and book your leads while you sleep.</p>
+                <ul class="acc-tags">
+                  <li>Workflows</li><li>Webhooks</li><li>AI agents</li><li>Error handling</li>
+                </ul>
+                <div class="acc-metric"><span>Idempotent</span> flows, safe re-runs</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="acc-item reveal">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-idx">03</span>
+              <span class="acc-name">CRM &amp; Pipeline Setup</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-panel">
+              <div class="acc-inner">
+                <p>Capture every lead from every channel and drive it into a pipeline that mirrors how your sales team actually works.</p>
+                <ul class="acc-tags">
+                  <li>Pipelines</li><li>Tagging</li><li>Smart lists</li><li>Reporting</li>
+                </ul>
+                <div class="acc-metric"><span>Clean</span> data from day one</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="acc-item reveal">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-idx">04</span>
+              <span class="acc-name">GHL SaaS &amp; White-Label</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-panel">
+              <div class="acc-inner">
+                <p>Brand your own SaaS on GoHighLevel — custom domains, billing, snapshots and a mobile app that looks like yours, not GHL's.</p>
+                <ul class="acc-tags">
+                  <li>Custom domains</li><li>Billing</li><li>Snapshots</li><li>Mobile app</li>
+                </ul>
+                <div class="acc-metric"><span>Agency-ready</span> builds</div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="acc-foot reveal">
+          <span>Also: Email &amp; SMS campaigns · Lead capture · White-label support</span>
+          <a href="#contact" class="btn btn-primary btn-sm">Start a project <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toolkit -->
+    <section class="section light" id="tools">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-num">03</span>
+          <span class="sec-label">Tools &amp; skills</span>
+        </div>
+        <div class="tools-head">
+          <h2 class="section-title reveal">My <em>toolkit</em></h2>
+          <p class="section-lede reveal">GoHighLevel at the core, wired into the tools your team already uses. One stack, no duct tape.</p>
+        </div>
+
+        <div class="skills reveal">
+          <div class="skill" data-level="95"><div class="skill-top"><span class="skill-name">GoHighLevel</span><span class="skill-pct">95%</span></div><div class="skill-bar"><span></span></div></div>
+          <div class="skill" data-level="92"><div class="skill-top"><span class="skill-name">Automations</span><span class="skill-pct">92%</span></div><div class="skill-bar"><span></span></div></div>
+          <div class="skill" data-level="90"><div class="skill-top"><span class="skill-name">Funnels</span><span class="skill-pct">90%</span></div><div class="skill-bar"><span></span></div></div>
+          <div class="skill" data-level="88"><div class="skill-top"><span class="skill-name">Zapier</span><span class="skill-pct">88%</span></div><div class="skill-bar"><span></span></div></div>
+          <div class="skill" data-level="85"><div class="skill-top"><span class="skill-name">Make</span><span class="skill-pct">85%</span></div><div class="skill-bar"><span></span></div></div>
+          <div class="skill" data-level="80"><div class="skill-top"><span class="skill-name">HubSpot</span><span class="skill-pct">80%</span></div><div class="skill-bar"><span></span></div></div>
+          <div class="skill" data-level="82"><div class="skill-top"><span class="skill-name">OpenAI / AI Agents</span><span class="skill-pct">82%</span></div><div class="skill-bar"><span></span></div></div>
+          <div class="skill" data-level="78"><div class="skill-top"><span class="skill-name">Twilio · SMS</span><span class="skill-pct">78%</span></div><div class="skill-bar"><span></span></div></div>
+        </div>
+
+        <div class="tools-chips reveal">
+          <span>GoHighLevel</span><span>Make.com</span><span>Zapier</span><span>OpenAI</span>
+          <span>Meta Ads</span><span>Twilio</span><span>Stripe</span><span>Calendly</span>
+          <span>Slack</span><span>Webhooks / REST</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section class="section navy" id="resume">
+      <div class="container">
+        <div class="sec-head light">
+          <span class="sec-num">04</span>
+          <span class="sec-label">Resume</span>
+        </div>
+        <div class="resume-head">
+          <h2 class="section-title reveal">Education &amp; <em>experience</em></h2>
+          <p class="section-lede reveal">Computer science, then marketing, then GoHighLevel. Years of learning what actually makes a business grow.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item reveal">
+            <div class="tl-date">Oct 2025 — Jun 2026</div>
+            <div class="tl-body">
+              <h3>GHL Developer &amp; Automation Specialist</h3>
+              <span class="tl-org">SolBase Tech · Remote</span>
+              <ul>
+                <li>Developed GHL funnels, automations and client integrations within an agency team handling multiple client accounts.</li>
+                <li>Owned builds from first brief to go-live.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">Oct 2024 — Aug 2025</div>
+            <div class="tl-body">
+              <h3>GHL Developer</h3>
+              <span class="tl-org">Markelop</span>
+              <ul>
+                <li>Built and managed GoHighLevel workflows, landing pages and CRM pipelines for agency clients.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">Jan 2023 — May 2024</div>
+            <div class="tl-body">
+              <h3>GHL Developer &amp; Automation Specialist</h3>
+              <span class="tl-org">Leads Lab</span>
+              <ul>
+                <li>Designed lead-generation funnels and automation sequences within GoHighLevel for agency clients.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">Late 2022 — Present</div>
+            <div class="tl-body">
+              <h3>Freelance GHL Developer &amp; Automation Specialist</h3>
+              <span class="tl-org">Direct clients</span>
+              <ul>
+                <li>60+ high-converting funnels, workflows, email/SMS campaigns and chatbots across multiple niches.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">Education</div>
+            <div class="tl-body">
+              <h3>BS Computer Science</h3>
+              <span class="tl-org">UMT Lahore — University of Management &amp; Technology</span>
+              <ul>
+                <li>Grounded in software engineering, databases and web technologies — the technical base behind every system I build.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="section light" id="work">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-num">05</span>
+          <span class="sec-label">Portfolio</span>
+        </div>
+        <div class="work-head">
+          <h2 class="section-title reveal">Featured <em>projects</em></h2>
+          <p class="section-lede reveal">Funnels, websites and automation systems. Hover a project to preview it, click to open the full screen and workflow.</p>
+        </div>
+
+        <div class="work-feature">
+          <div class="work-list" id="work-list">
+          <button class="work-row is-active" type="button" data-index="0" data-num="01" data-category="funnel"
+            data-title="Solvency — Credit Repair Funnel"
+            data-tags="Funnels · Financial · Website"
+            data-meta="11 screens"
+            data-desc="An 11-section GoHighLevel funnel built to capture leads at every scroll point — hero to FAQ — with forms wired straight into the CRM and behavior-triggered nurture."
+            data-img="assets/projects/funnel-solvency-01-hero-7dcAdxx-.jpg">
+            <span class="work-row-num">01</span>
+            <span class="work-row-main">
+              <span class="work-row-title">Solvency — Credit Repair Funnel</span>
+              <span class="work-row-tags">Funnels · Financial · Website</span>
+            </span>
+            <span class="work-row-arrow" aria-hidden="true">↗</span>
+            <span class="work-row-thumb" aria-hidden="true"><img src="assets/projects/funnel-solvency-01-hero-7dcAdxx-.jpg" alt="" loading="lazy" /></span>
+          </button>
+
+          <button class="work-row" type="button" data-index="1" data-num="02" data-category="funnel"
+            data-title="Garda — Landscaping &amp; Garden"
+            data-tags="Funnels · Local Services · Website"
+            data-meta="8 screens"
+            data-desc="An 8-section GHL site that captures contact requests on every section and routes them into the pipeline with automated follow-up."
+            data-img="assets/projects/funnel-garda-01-hero-tQDzYVkY.jpg">
+            <span class="work-row-num">02</span>
+            <span class="work-row-main">
+              <span class="work-row-title">Garda — Landscaping &amp; Garden</span>
+              <span class="work-row-tags">Funnels · Local Services · Website</span>
+            </span>
+            <span class="work-row-arrow" aria-hidden="true">↗</span>
+            <span class="work-row-thumb" aria-hidden="true"><img src="assets/projects/funnel-garda-01-hero-tQDzYVkY.jpg" alt="" loading="lazy" /></span>
+          </button>
+
+          <button class="work-row" type="button" data-index="2" data-num="03" data-category="workflow"
+            data-title="Real Estate — Ads to Appointments"
+            data-tags="GoHighLevel · Automation · Real Estate"
+            data-meta="+faster response"
+            data-desc="From Facebook Lead Ads to a booked appointment in minutes — duplicate checks, instant SMS, email follow-up, qualification branches and SLA reporting."
+            data-img="assets/projects/workflow-real-estate-ghl-DaSGGzCS.jpg">
+            <span class="work-row-num">03</span>
+            <span class="work-row-main">
+              <span class="work-row-title">Real Estate — Ads to Appointments</span>
+              <span class="work-row-tags">GoHighLevel · Automation · Real Estate</span>
+            </span>
+            <span class="work-row-arrow" aria-hidden="true">↗</span>
+            <span class="work-row-thumb" aria-hidden="true"><img src="assets/projects/workflow-real-estate-ghl-DaSGGzCS.jpg" alt="" loading="lazy" /></span>
+          </button>
+
+          <button class="work-row" type="button" data-index="3" data-num="04" data-category="workflow"
+            data-title="Dental — Appointment Engine"
+            data-tags="GoHighLevel · AI Agent · Healthcare"
+            data-meta="fewer no-shows"
+            data-desc="Capture-to-treatment automation with an AI front desk that books, reminds and follows up on autopilot — including missed-call recovery and no-show sequences."
+            data-img="assets/projects/workflow-dental-dae-0VUkaZ2a.jpg">
+            <span class="work-row-num">04</span>
+            <span class="work-row-main">
+              <span class="work-row-title">Dental — Appointment Engine</span>
+              <span class="work-row-tags">GoHighLevel · AI Agent · Healthcare</span>
+            </span>
+            <span class="work-row-arrow" aria-hidden="true">↗</span>
+            <span class="work-row-thumb" aria-hidden="true"><img src="assets/projects/workflow-dental-dae-0VUkaZ2a.jpg" alt="" loading="lazy" /></span>
+          </button>
+
+          <button class="work-row" type="button" data-index="4" data-num="05" data-category="workflow"
+            data-title="Orr &amp; Associates — 66 Workflows"
+            data-tags="GoHighLevel · Automation · Insurance"
+            data-meta="66 workflows"
+            data-desc="An insurance agency running on 66 published workflows organized into folders — intake, quotes, renewals, missed calls and notifications, all clone-ready."
+            data-img="assets/projects/workflow-insurance-orr-Di096j0j.jpg">
+            <span class="work-row-num">05</span>
+            <span class="work-row-main">
+              <span class="work-row-title">Orr &amp; Associates — 66 Workflows</span>
+              <span class="work-row-tags">GoHighLevel · Automation · Insurance</span>
+            </span>
+            <span class="work-row-arrow" aria-hidden="true">↗</span>
+            <span class="work-row-thumb" aria-hidden="true"><img src="assets/projects/workflow-insurance-orr-Di096j0j.jpg" alt="" loading="lazy" /></span>
+          </button>
+
+          <button class="work-row" type="button" data-index="5" data-num="06" data-category="workflow"
+            data-title="Missed Call Text-Back"
+            data-tags="GoHighLevel · SMS · Service Business"
+            data-meta="24/7 recovery"
+            data-desc="GHL listens for unanswered inbound calls and fires a professional SMS text-back in seconds — recovering conversations that would otherwise be lost."
+            data-img="assets/projects/workflow-missed-call-text-back-BhtqrN7i.jpg">
+            <span class="work-row-num">06</span>
+            <span class="work-row-main">
+              <span class="work-row-title">Missed Call Text-Back</span>
+              <span class="work-row-tags">GoHighLevel · SMS · Service Business</span>
+            </span>
+            <span class="work-row-arrow" aria-hidden="true">↗</span>
+            <span class="work-row-thumb" aria-hidden="true"><img src="assets/projects/workflow-missed-call-text-back-BhtqrN7i.jpg" alt="" loading="lazy" /></span>
+          </button>
+
+          <button class="work-row" type="button" data-index="6" data-num="07" data-category="workflow"
+            data-title="Automatización PT/ES"
+            data-tags="Automation · Recipes · Localization"
+            data-meta="reusable recipes"
+            data-desc="A library of automation recipes for Portuguese and Spanish locales — reusable building blocks for faster client deployments."
+            data-img="assets/projects/workflow-automatizacion-pt-es-D6eyoPGW.jpg">
+            <span class="work-row-num">07</span>
+            <span class="work-row-main">
+              <span class="work-row-title">Automatización PT/ES</span>
+              <span class="work-row-tags">Automation · Recipes · Localization</span>
+            </span>
+            <span class="work-row-arrow" aria-hidden="true">↗</span>
+            <span class="work-row-thumb" aria-hidden="true"><img src="assets/projects/workflow-automatizacion-pt-es-D6eyoPGW.jpg" alt="" loading="lazy" /></span>
+          </button>
+
+          <button class="work-row" type="button" data-index="7" data-num="08" data-category="integration"
+            data-title="GHL ⇄ HubSpot via Zapier"
+            data-tags="Zapier · Webhooks · HubSpot CRM"
+            data-meta="sync live"
+            data-desc="A PT/ES bridge that keeps GoHighLevel and HubSpot in lockstep — companies first, contacts second, nothing orphaned."
+            data-img="assets/projects/zapier-pt-es-ghl-hubspot-bt3o_LWm.jpg">
+            <span class="work-row-num">08</span>
+            <span class="work-row-main">
+              <span class="work-row-title">GHL ⇄ HubSpot via Zapier</span>
+              <span class="work-row-tags">Zapier · Webhooks · HubSpot CRM</span>
+            </span>
+            <span class="work-row-arrow" aria-hidden="true">↗</span>
+            <span class="work-row-thumb" aria-hidden="true"><img src="assets/projects/zapier-pt-es-ghl-hubspot-bt3o_LWm.jpg" alt="" loading="lazy" /></span>
+          </button>
+          </div>
+
+          <aside class="work-preview" aria-label="Project preview">
+            <div class="work-preview-frame clip-reveal">
+              <img class="work-preview-img is-active" src="assets/projects/funnel-solvency-01-hero-7dcAdxx-.jpg" alt="Solvency credit repair funnel preview" />
+              <img class="work-preview-img" src="assets/projects/funnel-garda-01-hero-tQDzYVkY.jpg" alt="Garda landscaping funnel preview" />
+              <img class="work-preview-img" src="assets/projects/workflow-real-estate-ghl-DaSGGzCS.jpg" alt="Real estate GHL workflow preview" />
+              <img class="work-preview-img" src="assets/projects/workflow-dental-dae-0VUkaZ2a.jpg" alt="Dental appointment engine preview" />
+              <img class="work-preview-img" src="assets/projects/workflow-insurance-orr-Di096j0j.jpg" alt="Insurance agency workflow folders preview" />
+              <img class="work-preview-img" src="assets/projects/workflow-missed-call-text-back-BhtqrN7i.jpg" alt="Missed call text-back workflow preview" />
+              <img class="work-preview-img" src="assets/projects/workflow-automatizacion-pt-es-D6eyoPGW.jpg" alt="PT/ES automation recipes preview" />
+              <img class="work-preview-img" src="assets/projects/zapier-pt-es-ghl-hubspot-bt3o_LWm.jpg" alt="Zapier GHL to HubSpot sync preview" />
+              <span class="work-preview-meta" id="work-preview-meta">11 screens</span>
+            </div>
+            <div class="work-preview-info">
+              <span class="work-preview-index" id="work-preview-index">01 / 08</span>
+              <div class="work-preview-text">
+                <h3 class="work-preview-title" id="work-preview-title">Solvency — Credit Repair Funnel</h3>
+                <p class="work-preview-desc" id="work-preview-desc">An 11-section GoHighLevel funnel built to capture leads at every scroll point — hero to FAQ — with forms wired straight into the CRM and behavior-triggered nurture.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deliverables / testimonials-style marquee -->
+    <section class="section navy deliverables" id="deliverables">
+      <div class="container">
+        <div class="sec-head light">
+          <span class="sec-num">06</span>
+          <span class="sec-label">What to expect</span>
+        </div>
+        <div class="deliverables-head">
+          <h2 class="section-title reveal">What working with me <em>looks like</em></h2>
+        </div>
+      </div>
+
+      <div class="cards-marquee" aria-label="How I work">
+        <div class="cards-track">
+          <article class="d-card">
+            <span class="d-num">01</span>
+            <p>Clear communication at every step — from the strategy call right through to final handoff.</p>
+            <span class="d-tag">Strategy &amp; Discovery</span>
+          </article>
+          <article class="d-card">
+            <span class="d-num">02</span>
+            <p>Before adding anything new, I audit what exists — broken triggers, failure paths and duplicates get fixed first.</p>
+            <span class="d-tag">Audit Before Build</span>
+          </article>
+          <article class="d-card">
+            <span class="d-num">03</span>
+            <p>Opt-outs, A2P registration and spam-safe cadence handled correctly from day one, so the system runs without surprises.</p>
+            <span class="d-tag">Compliant by Default</span>
+          </article>
+          <article class="d-card">
+            <span class="d-num">04</span>
+            <p>Every build ships snapshot-ready with documentation, so it can be cloned and handed over to a team cleanly.</p>
+            <span class="d-tag">Clone-Ready Deliverables</span>
+          </article>
+          <article class="d-card">
+            <span class="d-num">05</span>
+            <p>Focused sprints instead of endless back-and-forth — shipped fast, then tuned with real data after launch.</p>
+            <span class="d-tag">Fast, Then Optimized</span>
+          </article>
+          <article class="d-card">
+            <span class="d-num">06</span>
+            <p>Goals mapped to a clear roadmap before any build, so you always know what's being built and why.</p>
+            <span class="d-tag">Goals First</span>
+          </article>
+          <!-- duplicate set for seamless loop -->
+          <article class="d-card" aria-hidden="true"><span class="d-num">01</span><p>Clear communication at every step — from the strategy call right through to final handoff.</p><span class="d-tag">Strategy &amp; Discovery</span></article>
+          <article class="d-card" aria-hidden="true"><span class="d-num">02</span><p>Before adding anything new, I audit what exists — broken triggers, failure paths and duplicates get fixed first.</p><span class="d-tag">Audit Before Build</span></article>
+          <article class="d-card" aria-hidden="true"><span class="d-num">03</span><p>Opt-outs, A2P registration and spam-safe cadence handled correctly from day one, so the system runs without surprises.</p><span class="d-tag">Compliant by Default</span></article>
+          <article class="d-card" aria-hidden="true"><span class="d-num">04</span><p>Every build ships snapshot-ready with documentation, so it can be cloned and handed over to a team cleanly.</p><span class="d-tag">Clone-Ready Deliverables</span></article>
+          <article class="d-card" aria-hidden="true"><span class="d-num">05</span><p>Focused sprints instead of endless back-and-forth — shipped fast, then tuned with real data after launch.</p><span class="d-tag">Fast, Then Optimized</span></article>
+          <article class="d-card" aria-hidden="true"><span class="d-num">06</span><p>Goals mapped to a clear roadmap before any build, so you always know what's being built and why.</p><span class="d-tag">Goals First</span></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto / Automate Grow -->
+    <section class="section light manifesto" id="manifesto">
+      <div class="liquid liquid-c" aria-hidden="true"></div>
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-num">07</span>
+          <span class="sec-label">A mantra</span>
+        </div>
+        <h2 class="section-title reveal">Our Mood</h2>
+        <p class="section-lede manifesto-intro reveal">
+          If it repeats, automate it. If it leaves money on the table, fix it. That simple question
+          powers every build — your system should keep working even when you're not looking.
+        </p>
+      </div>
+      <div class="particles-block" aria-hidden="true">
+        <span class="visually-hidden">Automate. Grow.</span>
+        <div class="particles-text" data-text="AUTOMATE"></div>
+        <div class="particles-text" data-text="GROW"></div>
+      </div>
+    </section>
+
+    <div class="funky-divider funky-divider-alt" aria-hidden="true">
+      <span class="fd-line"></span>
+      <span class="fd-star">✳</span>
+      <span class="fd-text">let's make it automatic</span>
+      <span class="fd-star fd-star-2">✳</span>
+      <span class="fd-line"></span>
+    </div>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-num">08</span>
+          <span class="sec-label">Contact</span>
+        </div>
+
+        <div class="contact-head">
+          <h2 class="contact-title reveal">Let's build<br /><em>yours next.</em></h2>
+          <div class="contact-intro reveal">
+            <p>Tell me where leads slip through the cracks. I'll map the system that catches them — whether you need one funnel or a full GoHighLevel build.</p>
+            <div class="contact-actions">
+              <a href="mailto:afsheen.ghl@gmail.com?subject=Hire%20Me%20Request" class="btn btn-primary">Hire me <span aria-hidden="true">→</span></a>
+              <a href="https://wa.me/923116515703" target="_blank" rel="noopener" class="btn btn-ghost">Chat on WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <ul class="contact-list">
+              <li><span class="cl-label">Email</span><a href="mailto:afsheen.ghl@gmail.com">afsheen.ghl@gmail.com</a></li>
+              <li><span class="cl-label">Phone</span><a href="tel:+923116515703">+92 311 6515703</a></li>
+              <li><span class="cl-label">Location</span><span>Lahore, Pakistan · Working worldwide</span></li>
+              <li><span class="cl-label">Hours</span><span>Mon – Fri · 9:00 AM – 6:00 PM PKT</span></li>
+            </ul>
+            <ul class="social-links" aria-label="Social links">
+              <li><a href="https://www.linkedin.com/in/maryam-zarafshan-a51318385" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+              <li><a href="#" target="_blank" rel="noopener">Upwork ↗</a></li>
+              <li><a href="https://wa.me/923116515703" target="_blank" rel="noopener">WhatsApp ↗</a></li>
+            </ul>
+          </div>
+
+          <form class="contact-form reveal" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="f-name">Full name *</label>
+                <input type="text" id="f-name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-field">
+                <label for="f-email">Email *</label>
+                <input type="email" id="f-email" name="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="f-phone">Phone <span class="opt">(optional)</span></label>
+                <input type="tel" id="f-phone" name="phone" placeholder="+92 3XX XXXXXXX" />
+              </div>
+              <div class="form-field">
+                <label for="f-budget">Budget <span class="opt">(optional)</span></label>
+                <select id="f-budget" name="budget">
+                  <option value="">Select budget</option>
+                  <option>Under $500</option>
+                  <option>$500 – $1,000</option>
+                  <option>$1,000 – $2,500</option>
+                  <option>$2,500+</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="f-subject">Subject *</label>
+              <input type="text" id="f-subject" name="subject" placeholder="Funnel, automation, CRM build..." required />
+            </div>
+            <div class="form-field">
+              <label for="f-message">Message *</label>
+              <textarea id="f-message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send message <span aria-hidden="true">→</span></button>
+            <p class="form-note" id="form-note">Prefer email? Reach me at afsheen.ghl@gmail.com</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#top" class="footer-brand">Maryam Zarafshan<sup>®</sup></a>
+      <p class="footer-copy">© <span id="year"></span> Maryam Zarafshan. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="mailto:afsheen.ghl@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/maryam-zarafshan-a51318385" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://wa.me/923116515703" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lb-title">
+    <div class="lb-backdrop" data-close></div>
+    <div class="lb-panel">
+      <button class="lb-close" type="button" data-close aria-label="Close project">✕</button>
+      <div class="lb-media"><img src="" alt="" id="lb-img" /></div>
+      <div class="lb-body">
+        <span class="work-tags" id="lb-tags">Project</span>
+        <h3 id="lb-title">Project title</h3>
+        <p id="lb-desc">Project description.</p>
+        <a href="#contact" class="btn btn-primary" data-close>Start a similar project <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
