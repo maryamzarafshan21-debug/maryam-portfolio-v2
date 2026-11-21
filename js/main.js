@@ -765,10 +765,25 @@
     }
   }
 
-  /* ---------- Contact form ---------- */
+    /* ---------- Contact form ---------- */
+  // These three values are meant to be public in the browser.
+  const EMAILJS_PUBLIC_KEY = "DTvsIpT2ALNN6hVVM";
+  const EMAILJS_SERVICE_ID = "service_t0t4b4k";
+  const EMAILJS_TEMPLATE_ID = "template_i3hxvhs";
+
   const form = $("#contact-form");
   const formNote = $("#form-note");
+  const getVal = (...ids) => {
+    for (const id of ids) {
+      const el = document.getElementById(id);
+      if (el) return el.value.trim();
+    }
+    return "";
+  };
+
   if (form) {
+    if (window.emailjs) emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       let valid = true;
@@ -783,20 +798,56 @@
         if (formNote) { formNote.textContent = "Please fill in the required fields correctly."; formNote.classList.remove("success"); }
         return;
       }
-      const name = ($("#f-name").value.trim().split(" ")[0]) || "there";
-      form.reset();
-      if (formNote) {
-        formNote.textContent = `Thanks ${name}! Your message is ready — I'll reply shortly.`;
-        formNote.classList.add("success");
+      if (!window.emailjs) {
+        if (formNote) { formNote.textContent = "Sorry, the form isn't available right now. Please email me directly."; formNote.classList.remove("success"); }
+        return;
       }
+
+      const name = getVal("f-name");
+      const email = getVal("f-email");
+      const phone = getVal("f-phone");
+      const budget = getVal("f-budget");
+      const subject = getVal("f-subject");
+      const textarea = form.querySelector("textarea");
+      const message = getVal("f-message") || (textarea ? textarea.value.trim() : "");
+      const firstName = name.split(" ")[0] || "there";
+      const fullMessage = message +
+        (phone ? `\n\nPhone: ${phone}` : "") +
+        (budget ? `\nBudget: ${budget}` : "");
+
       const submitBtn = $(".btn-block", form);
-      if (submitBtn) {
-        const r = submitBtn.getBoundingClientRect();
-        burstConfetti(r.left + r.width / 2, r.top + r.height / 2, 34);
-      }
-      playBlip(700, 0.1, "sine", 0.05);
-      setTimeout(() => playBlip(980, 0.14, "sine", 0.045), 110);
+      if (submitBtn) submitBtn.disabled = true;
+      if (formNote) { formNote.textContent = "Sending..."; formNote.classList.remove("success"); }
+
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        name,
+        email,
+        title: subject || `New portfolio inquiry from ${name}`,
+        message: fullMessage,
+        time: new Date().toLocaleString(),
+      }).then(() => {
+        form.reset();
+        if (formNote) {
+          formNote.textContent = `Thanks ${firstName}! Your message was sent. I will reply shortly.`;
+          formNote.classList.add("success");
+        }
+        if (submitBtn) {
+          const r = submitBtn.getBoundingClientRect();
+          burstConfetti(r.left + r.width / 2, r.top + r.height / 2, 34);
+        }
+        playBlip(700, 0.1, "sine", 0.05);
+        setTimeout(() => playBlip(980, 0.14, "sine", 0.045), 110);
+      }).catch((err) => {
+        console.error("EmailJS send failed:", err);
+        if (formNote) {
+          formNote.textContent = "Sorry, your message could not be sent. Please try again or email me directly.";
+          formNote.classList.remove("success");
+        }
+      }).finally(() => {
+        if (submitBtn) submitBtn.disabled = false;
+      });
     });
+
     $$("input, textarea", form).forEach((field) => {
       field.addEventListener("input", () => {
         const wrap = field.closest(".form-field");
