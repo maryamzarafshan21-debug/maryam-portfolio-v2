@@ -819,11 +819,20 @@
       if (submitBtn) submitBtn.disabled = true;
       if (formNote) { formNote.textContent = "Sending..."; formNote.classList.remove("success"); }
 
-      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+     emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
         name,
+        from_name: name,
+        user_name: name,
         email,
+        from_email: email,
+        user_email: email,
+        reply_to: email,
+        phone,
+        user_phone: phone,
+        budget,
         title: subject || `New portfolio inquiry from ${name}`,
-        message: fullMessage,
+        subject: subject || `New portfolio inquiry from ${name}`,
+        message,
         time: new Date().toLocaleString(),
       }).then(() => {
         form.reset();
